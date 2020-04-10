@@ -15,11 +15,15 @@
     <%= @destination.description %>
   </p>
 
-  <%= image_tag(@destination.image_url) %>
+  <%= image_tag(@image.random) %>
 
   <div class="row">
     <h4>Forecast for <%= @destination.name %>:</h4>
-
+    <p>Date:  <%= Date.today %>
+    <p>Current Temp:  <%= @response.current_temp %>
+    <p>High Temp:  <%= @response.high_temp %>
+    <p>Low Temp:  <%= @response.low_temp %>
+    <p>Summary:  <%= @response.summary %>
   </div>
 
   <div class="row">

@@ -6,6 +6,10 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    service = WeatherService.new(@destination.name)
+    @response = WeatherFacade.new(service.city)
+    giphy = GiphyService.new(@response.data[:weather][0][:main])
+    @image = GiphyFacade.new(giphy.gif)
   end
 
   def new
